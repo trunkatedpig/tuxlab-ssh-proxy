@@ -16,5 +16,11 @@ global npm modules are also installed to `/usr/bin`
 To build this image, pull this repo and cd into the directory containing Dockerfile. Then, run
 
 ```
-docker build -t <NAME> .
+docker build -t IMAGENAME .
+```
+
+To create a container, then run
+
+```
+docker run -d -P --name CONTAINERNAME IMAGENAME
 ```
