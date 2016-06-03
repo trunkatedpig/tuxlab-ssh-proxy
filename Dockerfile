@@ -11,4 +11,4 @@ RUN apk update && \
 
 EXPOSE 80 443
 
-CMD ["/entry.sh /bin/sh -c"]
+CMD ["tail -f /dev/null"]
