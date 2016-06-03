@@ -3,13 +3,12 @@ MAINTAINER Aaron Mortenson <amortens@andrew.cmu.edu>
 
 RUN apk update && \
     apk add nodejs && \
-    rm -rf /var/cache/apk/* && \
     mkdir /data && \
+    cd data && \
     npm install && \
-    npm install redbird
-
-WORKDIR /data
+    npm install redbird && \
+    rm -rf /var/cache/apk/*
 
 EXPOSE 80 443
 
-CMD ["sh"]
+CMD ["/entry.sh /bin/sh -c"]
