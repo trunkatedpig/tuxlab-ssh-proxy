@@ -1,9 +1,6 @@
 # Alpine Node.js
 
-Alpine Node.js is a docker image based on Alpine Linux using a Dockerfile
-similar to the library [nodejs](https://github.com/dockerfile/nodejs/blob/master/Dockerfile).
-
-This image is [gliderlabs/alpine](https://github.com/gliderlabs/docker-alpine) image.
+This fork contains the dockerfile for a docker alpine image with nodejs and redbird installed.
 
 ## Notes
 
@@ -16,21 +13,8 @@ global npm modules are also installed to `/usr/bin`
 `/usr/lib/node_modules` holds the globally installed modules
 
 # Usage
-
-Create a Dockerfile in your nodejs application directory with the following contents:
-
-```
-FROM kiasaki/alpine-nodejs
-
-ADD . /data
-RUN npm install
-
-CMD []
-ENTRYPOINT ["npm start"]
-```
-
-Then you can run the following command in your application directory:
+To build this image, pull this repo and cd into the directory containing Dockerfile. Then, run
 
 ```
-docker build -t my/app .
+docker build -t <NAME> .
 ```

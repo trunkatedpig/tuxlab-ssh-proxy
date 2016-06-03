@@ -5,7 +5,8 @@ RUN apk update && \
     apk add nodejs && \
     rm -rf /var/cache/apk/* && \
     mkdir /data && \
-    npm install redbird && \
+    npm install && \
+    npm install redbird
 
 WORKDIR /data
 
