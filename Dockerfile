@@ -1,8 +1,14 @@
-FROM gliderlabs/alpine:3.1
-MAINTAINER Frederic Gingras <frederic@gingras.cc> (@kiasaki)
+FROM alpine:latest
+MAINTAINER Aaron Mortenson <amortens@andrew.cmu.edu>
 
-RUN apk update && apk add nodejs && rm -rf /var/cache/apk/* && mkdir /data
+RUN apk update && \
+    apk add nodejs && \
+    rm -rf /var/cache/apk/* && \
+    mkdir /data && \
+    npm install redbird && \
 
 WORKDIR /data
+
+EXPOSE 80 443
 
 CMD ["sh"]
