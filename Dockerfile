@@ -3,9 +3,8 @@ MAINTAINER Aaron Mortenson <amortens@andrew.cmu.edu>
 
 RUN apk update && \
     apk add nodejs && \
-    mkdir /data && \
-    cd data && \
-    npm install && \
+    cd ~/ && \
+    npm install npm -g && \
     npm install redbird && \
     rm -rf /var/cache/apk/*
 
