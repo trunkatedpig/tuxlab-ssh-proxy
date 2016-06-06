@@ -8,6 +8,8 @@ RUN apk update && \
     npm install redbird && \
     rm -rf /var/cache/apk/*
 
-EXPOSE 80 443
+COPY proxies.js /root/proxies.js
 
-CMD ["tail -f /dev/null"]
+EXPOSE 22 80 443
+
+CMD ["/usr/bin/node /root/proxies.js"]
