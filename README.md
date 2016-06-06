@@ -22,5 +22,5 @@ docker build -t IMAGENAME .
 To create a container, then run
 
 ```
-docker run -d -P --name CONTAINERNAME IMAGENAME
+docker run -it -P --name CONTAINERNAME IMAGENAME /usr/bin/node /root/proxies.js
 ```

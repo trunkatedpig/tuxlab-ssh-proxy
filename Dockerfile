@@ -12,4 +12,4 @@ COPY proxies.js /root/proxies.js
 
 EXPOSE 22 80 443
 
-CMD ["/usr/bin/node /root/proxies.js"]
+CMD ["/usr/bin/node"]
