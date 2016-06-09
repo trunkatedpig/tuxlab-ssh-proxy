@@ -1,0 +1,29 @@
+{
+  "name": "tuxlab-revserse-proxy",
+  "version": "0.1.0",
+  "description": "Reverse Proxy and SSH Bridge in NodeJS",
+  "main": "proxy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/learnlinux/redbird.git"
+  },
+  "keywords": [
+    "tuxlab",
+    "carnegie",
+    "mellon"
+  ],
+  "author": "Derek Brown",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/learnlinux/redbird/issues"
+  },
+  "homepage": "https://github.com/learnlinux/redbird#readme",
+  "dependencies": {
+    "pty.js": "github:learnlinux/pty.js",
+    "redbird": "github:learnlinux/redbird",
+    "socket.io": "^1.4.6"
+  }
+}
