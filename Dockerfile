@@ -1,7 +1,7 @@
 FROM alpine:latest
 MAINTAINER Aaron Mortenson <amortens@andrew.cmu.edu>
 
-COPY tuxproxy /root/
+COPY src/ /root/
 
 RUN apk update && \
     apk add nodejs && \
