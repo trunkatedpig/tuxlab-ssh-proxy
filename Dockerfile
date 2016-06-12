@@ -8,7 +8,7 @@ RUN apk update && \
     apk add nodejs && \
     cd ~/ && \
     npm install npm -g && \
-    npm install && \
+    npm install --production && \
     rm -rf /var/cache/apk/*
 
 
