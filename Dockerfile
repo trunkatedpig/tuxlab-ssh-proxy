@@ -4,6 +4,7 @@ MAINTAINER Aaron Mortenson <amortens@andrew.cmu.edu>
 COPY src/ /root/
 
 RUN apk update && \
+    apk add git && \
     apk add nodejs && \
     cd ~/ && \
     npm install npm -g && \
