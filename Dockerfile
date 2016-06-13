@@ -18,4 +18,4 @@ RUN apk update && \
 EXPOSE 22 80 443
 
 ENTRYPOINT ["node"]
-CMD ["proxy.js"]
+CMD ["/root/proxy.js"]
