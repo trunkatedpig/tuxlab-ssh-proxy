@@ -6,7 +6,7 @@
 
 /* Read Settings */
   var fs = require('fs');
-  var settings = JSON.parse(fs.readFileSync("settings.json"));
+  var settings = JSON.parse(fs.readFileSync("/root/settings.json"));
 
 /* Start RedBird */
     // Register Port Forwarding
