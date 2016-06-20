@@ -8,13 +8,6 @@
   var fs = require('fs');
   var settings = JSON.parse(fs.readFileSync("/root/settings.json"));
 
-/* Start RedBird */
-    // Register Port Forwarding
-      var redbird = require('redbird')({port : settings.ssh_port});
-
-    // Enable etcd registration
-      require('redbird').etcd(redbird,settings.etcd_conf);
-
 /* Create WebSSH Listener */
 
     // Create Wetty server
@@ -79,6 +72,3 @@
             term.end();
         });
       })
-
-// Verify Route
-var pattern = '\.'.concat(settings.webssh_root);
