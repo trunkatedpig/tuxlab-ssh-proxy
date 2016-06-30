@@ -13,6 +13,7 @@ var backend_etcd = require('redrouter.backend.etcd');
 var agent_ssh = require('redrouter.agent.ssh-proxy');
 var agent_wetty = require('redrouter.agent.wetty');
 var resolver_ssh = require('redrouter.resolver.ssh');
+var middleware_docker = require('redrouter.middleware.docker');
 
 /*
   Define a RedRouter Instance
@@ -35,6 +36,13 @@ var proxy = new redrouter({
         defaults: {
           allowed_auth: ['password']
         }
+      }
+    }
+  ],
+  middleware: [
+    { constructor: middleware_docker,
+      options: {
+        docker_url: "tcp://172.17.0.1:2375"
       }
     }
   ],
