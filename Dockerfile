@@ -2,6 +2,7 @@ FROM alpine:latest
 MAINTAINER Derek Brown <derek@allderek.com>
 
 COPY src/ /root/
+COPY /etc/ssl/local /root/local
 
 RUN apk update && \
     apk upgrade && \
