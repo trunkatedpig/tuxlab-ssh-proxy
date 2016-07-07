@@ -40,16 +40,16 @@ var proxy = new redrouter({
   ],
   middleware: [
     { constructor: middleware_docker,
-      options: data.docker_conf
+      options: options.docker_conf
     }
   ],
   agents: [
     {
       constructor: agent_wetty,
-      options: data.wetty_conf
+      options: options.wetty_conf
     },
     { constructor: agent_ssh,
-      options: data.ssh_conf
+      options: options.ssh_conf
     }
   ]
 });
