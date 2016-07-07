@@ -26,7 +26,7 @@ var proxy = new redrouter({
   backend : {
     constructor: backend_etcd,
     options: {
-      host: "172.17.0.1:2379",
+      etcd_host: "172.17.0.1:2379",
       etcd_conn_opts: {}
     }
   },
