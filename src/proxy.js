@@ -7,6 +7,7 @@ var fs = require('fs');
 
 // Import RedRouter Core
 var redrouter = require('redrouter').create;
+var options = JSON.parse(fs.readFileSync('/root/settings.json'));
 
 // Import RedRouter Components
 var backend_etcd = require('redrouter.backend.etcd');
@@ -18,6 +19,7 @@ var middleware_docker = require('redrouter.middleware.docker');
 /*
   Define a RedRouter Instance
 */
+
 var proxy = new redrouter({
   ssl : {
     key : fs.readFileSync('/root/local/host.key'),
@@ -25,10 +27,7 @@ var proxy = new redrouter({
   },
   backend : {
     constructor: backend_etcd,
-    options: {
-      etcd_host: "172.17.0.1:2379",
-      etcd_conn_opts: {}
-    }
+    options: options.etcd_conf
   },
   resolvers: [
     { constructor: resolver_ssh,
@@ -41,24 +40,16 @@ var proxy = new redrouter({
   ],
   middleware: [
     { constructor: middleware_docker,
-      options: {
-        docker_url: "tcp://172.17.0.1:2375"
-      }
+      options: data.docker_conf
     }
   ],
   agents: [
     {
       constructor: agent_wetty,
-      options: {
-        host: 'localhost',
-        port: 80
-      }
+      options: data.wetty_conf
     },
     { constructor: agent_ssh,
-      options: {
-        host: 'localhost',
-        port: 22
-      }
+      options: data.ssh_conf
     }
   ]
 });
