@@ -15,7 +15,7 @@ RUN apk update && \
     npm install --production && \
     rm -rf /var/cache/apk/*
 
-EXPOSE 2222 80 443
+EXPOSE 22 80 443
 
 ENTRYPOINT ["node"]
 CMD ["/root/proxy.js"]
