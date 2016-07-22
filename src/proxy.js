@@ -46,6 +46,7 @@ var proxy = new redrouter({
           cert : fs.readFileSync(options.docker_conf.docker_args.cert),
           key : fs.readFileSync(options.docker_conf.docker_args.key),
           cacert : fs.readFileSync(options.docker_conf.docker_args.cacert)
+        }
       }
     }
   ],
