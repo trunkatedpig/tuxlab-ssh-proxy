@@ -13,9 +13,7 @@ RUN apk update && \
     cd /root/ && \
     npm install -g npm && \
     npm install --production && \
-    rm -rf /var/cache/apk/* && \
-    chmod +x docker_setup.sh && \
-    ./docker_setup.sh
+    rm -rf /var/cache/apk/*
 
 EXPOSE 22 80 443
 
