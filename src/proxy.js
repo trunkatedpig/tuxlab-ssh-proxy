@@ -40,7 +40,13 @@ var proxy = new redrouter({
   ],
   middleware: [
     { constructor: middleware_docker,
-      options: options.docker_conf
+      options: {
+        docker_url : options.docker_conf.docker_url,
+        docker_args : {
+          cert : fs.readFileSync(options.docker_conf.docker_args.cert),
+          key : fs.readFileSync(options.docker_conf.docker_args.key),
+          cacert : fs.readFileSync(options.docker_conf.docker_args.cacert)
+      }
     }
   ],
   agents: [
